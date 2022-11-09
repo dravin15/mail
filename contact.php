@@ -6,15 +6,14 @@ if(isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$number = $_POST['number'];
 	$city = $_POST['city'];
-	$message = $_POST['message'];
 
-if($name=='' || $email=='' || $number=='' || $city=='' || $message==''){
+if($name=='' || $email=='' || $number=='' || $city==''){
 	echo "</script>alert('All fields are required !')</script>";
 } 
 else {
 
-$to         = "dravin15071995@gmail.com"; // where you want to get mail 
-$subject    = " Contact Us From xxxxxxxxxxx :";
+$to         = "faimsubhani@gmail.com"; // where you want to get mail 
+$subject    = " Contact Us From :";
 
 $headers    = "From: $email";
 
@@ -23,10 +22,9 @@ $headers    = "From: $email";
 // $txt = "Email : ". $_POST['email'] ;
 // $txt = "Phone : ". $_POST['number'] ;
 // $txt = "city : ". $_POST['city'] ;
-// $txt = "Message : ". $_POST['message'];
 
 //or
- $txt = " Name : ". $name . "\n Email : ". $email ."\n Number : ". $number . " \n city : ". $city . "\n Message : ". $message;
+ $txt = " Name : ". $name . "\n Email : ". $email ."\n Number : ". $number . " \n city : ". $city;
 
 
 $sendmail = mail($to, $subject, $txt, $headers);
